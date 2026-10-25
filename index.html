@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantisky - Weather Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="drops">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="smoke">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="moving-clouds">
+            <div class="cloud-move cloud-move1"></div>
+            <div class="cloud-move cloud-move2"></div>
+            <div class="cloud-move cloud-move3"></div>
+            <div class="cloud-move cloud-move4"></div>
+            <div class="cloud-move cloud-move5"></div>
+        </div>
+        <div class="bottom-clouds">
+            <div class="bottom-cloud bottom-cloud1"></div>
+            <div class="bottom-cloud bottom-cloud2"></div>
+            <div class="bottom-cloud bottom-cloud3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>🌤️ Quantisky</h1>
+            <p>Check your city weather here</p>
+            <div id="currentDateTime" class="current-datetime"></div>
+        </header>
+
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="locationInput" 
+                        class="location-input" 
+                        placeholder="Search for city, state, or country..."
+                        autocomplete="off"
+                    >
+                </div>
+                <button id="searchBtn" class="search-btn">Search</button>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+        </section>
+
+        <section id="locationInfo" class="location-info" style="display: none;">
+            <h2 id="locationName"></h2>
+            <p id="locationDetails"></p>
+        </section>
+
+        <section id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </section>
+
+        <section id="error" class="error" style="display: none;">
+            <p id="errorMessage"></p>
+        </section>
+
+        <section id="weatherDashboard" class="weather-dashboard" style="display: none;">
+            <h3 class="dashboard-title">Weather Analysis</h3>
+            
+            <div class="today-main-section">
+                <h4 class="section-title-large">Weather Details</h4>
+                <div id="selectedWeatherCard" class="selected-weather-card"></div>
+            </div>
+
+            <div class="hourly-section">
+                <div class="hourly-slider-wrapper">
+                    <button class="slider-btn slider-btn-left" id="hourlyPrev">‹</button>
+                    <div class="hourly-slider-container" id="hourlySliderContainer">
+                        <div id="hourlyTemp" class="hourly-temp-row"></div>
+                    </div>
+                    <button class="slider-btn slider-btn-right" id="hourlyNext">›</button>
+                </div>
+            </div>
+
+            <div class="other-days-section">
+                <h4 class="section-title-medium">All Days</h4>
+                <div id="allDaysRow" class="all-days-uniform-row"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Made by <strong>Astha Gupta</strong> | GitHub: <a href="https://github.com/codewithtrust" target="_blank" rel="noopener noreferrer">@codewithtrust</a></p>
+            <p>Live App: <a href="https://codewithtrust.github.io/Quantisky" target="_blank" rel="noopener noreferrer">https://codewithtrust.github.io/Quantisky</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
